@@ -24,10 +24,16 @@ const App = () => {
     return totalFeedback === 0 ? 0 : Math.round((feedback.good / totalFeedback) * 100);
   };
 
+  const feedbackOptions = [
+    { type: 'good', label: 'Good' },
+    { type: 'neutral', label: 'Neutral' },
+    { type: 'bad', label: 'Bad' },
+  ];
+
   return (
     <div className="component-class">
       <Section title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={onLeaveFeedback} />
+        <FeedbackOptions options={feedbackOptions} onLeaveFeedback={onLeaveFeedback} />
       </Section>
 
       <Section title="Statistics">
